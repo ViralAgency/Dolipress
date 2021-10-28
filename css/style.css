@@ -1,0 +1,86 @@
+@charset "UTF-8";
+/* CSS Document */
+
+/* Font Awesome troubleshooting */
+
+.fa-cc-paypal:before {
+	color: darkblue !important;
+	padding: 0px 10px !important;
+}
+
+.bitcoin {
+	color: orange !important;
+	padding: 0px 10px !important;
+}
+
+.fa-star:before {
+	color: yellowgreen !important;
+}
+
+input[type=checkbox], input[type=radio] {
+    background: space;
+}
+
+.form-table th {
+    width: 100px;
+}
+
+/* Bootstrap conflicts */
+
+.form-select-lg {
+    padding-top: .5rem !important;
+    padding-bottom: .5rem !important;
+    padding-left: 1rem !important;
+    font-size: 1.25rem !important;
+}
+
+.form-select {
+    display: block !important;
+    width: 100%;
+    padding: .375rem 2.25rem .375rem .75rem !important;
+    -moz-padding-start: calc(0.75rem - 3px) !important;
+    font-size: 1rem !important;
+    font-weight: 400 !important;
+    line-height: 1.5 !important;
+    color: #212529 !important;
+    background-color: #fff !important;
+    background-image: url(data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16'%3e%3cpath fill='none' stroke='%23343a40' stroke-linecap='round' stroke-linejoin='round' stroke-width='2' d='M2 5l6 6 6-6'/%3e%3c/svg%3e) !important;
+    background-repeat: no-repeat !important;
+    background-position: right .75rem center !important;
+    background-size: 16px 12px !important;
+    border: 1px solid #ced4da !important;
+    border-radius: .25rem !important;
+    transition: border-color .15s ease-in-out,box-shadow .15s ease-in-out !important;
+    -webkit-appearance: none !important;
+    -moz-appearance: none !important;
+    appearance: none !important;
+}
+
+.dplogo {
+	width: 350px;
+}
+
+.valid {
+    border: 3px solid green !important;
+}
+
+.invalid {
+    border: 3px solid red !important;
+}
+
+p {
+    font-size: 14px !important;
+}
+
+.error_monitor {
+    height: 300px;
+}
+
+.hide{
+	display: none;
+}
+
+.qr{
+	width: 200px;
+	height: auto;
+}
