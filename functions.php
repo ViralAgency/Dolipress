@@ -392,12 +392,6 @@ function dp_print_errors(){
 		echo 'No errors yet';
 	}
 }
-//Invoke dp_eraseLog on button click
-
-function dp_invoke_erase(){
-
-}
-
 //Erase errors array
 
 function dp_eraseLog(){
