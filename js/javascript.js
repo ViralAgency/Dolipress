@@ -1,6 +1,6 @@
 /**
 * Plugin Name: DoliPress
-* Version: 0.1
+* Version: 1.0
 * Description: Synchronize gravity form with dolibarr third parties.
 * Author: Luca Scandroglio
 * Author URI: https://www.lucascandroglio.it
@@ -22,7 +22,6 @@ GNU General Public License for more details.
 You should have received a copy of the GNU General Public License
 along with Dolipress. If not, see https://www.gnu.org/licenses/gpl-3.0.html.
 */
-
 //Apply style if HTTPS is active
 
 var Usehttps = {
@@ -123,7 +122,7 @@ var FormatErrors = {
 	init: function(){
 		var errors = document.getElementById('errors');
 		var errors_text = errors.textContent;
-		if (Core.hasClass(errors, 'text-valid') && errors_text !== 'No errors yet.'){
+		if (Core.hasClass(errors, 'text-valid') && errors_text !== 'No errors yet'){
 			Core.removeClass(errors, 'text-valid');
 			Core.addClass(errors, 'text-danger');
 		}

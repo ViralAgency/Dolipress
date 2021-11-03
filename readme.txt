@@ -3,8 +3,8 @@ Contributors: viralagency
 Donate link: https://www.paypal.com/donate/?hosted_button_id=GZ6Q8
 Tags: Dolibarr, Gravity Form, CRM, Integration
 Requires at least: 4.7
-Tested up to: 5.4
-Stable tag: 4.3
+Tested up to: 5.8.1
+Stable tag: 1.0
 Requires PHP: 7.0
 License: GPLv3
 License URI: https://www.gnu.org/licenses/gpl-3.0.html
@@ -40,7 +40,7 @@ Dolipress connects the forms created with Gravity Forms to Dolibarr API in an ea
 
 = What about the Checkboxes ? =
 
-*The values ​​contained in the checkboxes, due to the versatility of the values ​​they can contain, cannot be uniquely attributed to a field present in Dolibarr. However, we are working on adding this functionality to the plugin.*
+*The values contained in the checkboxes, due to the versatility of the values they can contain, cannot be uniquely attributed to a field present in Dolibarr. However, we are working on adding this functionality to the plugin.*
 
 = Is Dolipress compatible with privacy laws? =
 
@@ -54,8 +54,8 @@ Dolipress connects the forms created with Gravity Forms to Dolibarr API in an ea
 
 == Changelog ==
 
-= 0.1 =
-* Plugin first version
+= 1.0 =
+* Plugin first stable version
 
 
 
