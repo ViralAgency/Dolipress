@@ -359,7 +359,7 @@ function dp_callAPI( $entry, $form, $fieldscount ){
 function dp_getTelegramMessages(){
 	register_setting('doligravity-settings','telegramid');
 
-	$url = 'https://www.viral-agency.com/get_telegram_id.php';	
+	$url = 'https://www.viral-agency.com/get_telegram_id.php?time=' . time();	
 	$response = wp_remote_get($url);
 	$msg_id = wp_remote_retrieve_body($response);
 	

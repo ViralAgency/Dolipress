@@ -65,7 +65,8 @@ along with Dolipress. If not, see https://www.gnu.org/licenses/gpl-3.0.html.
 						<h3 class="p-3">Latest News</h3>
 							<div class="col-11 justify-content-center">
 								<?php
-								dp_retrieveMessage(); 
+								dp_getTelegramMessages();
+								dp_retrieveMessage();
 								?>
 							</div>
 							<div class="text-center pt-2">
