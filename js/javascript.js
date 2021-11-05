@@ -116,20 +116,6 @@ var MakeDonation = {
 Core.start(MakeDonation); 
 
 
-//Apply "danger" style if there is an error
-
-var FormatErrors = {
-	init: function(){
-		var errors = document.getElementById('errors');
-		var errors_text = errors.textContent;
-		if (Core.hasClass(errors, 'text-valid') && errors_text !== 'No errors yet'){
-			Core.removeClass(errors, 'text-valid');
-			Core.addClass(errors, 'text-danger');
-		}
-	}
-};
-Core.start(FormatErrors);
-
 //Apply style if they have been found duplicated entries
 
 var SelectValidation = {

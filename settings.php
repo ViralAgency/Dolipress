@@ -99,7 +99,7 @@ along with Dolipress. If not, see https://www.gnu.org/licenses/gpl-3.0.html.
 						<p class="py-3">We have developed this plugin but we want to go further: new features, total integration, great user support, the work to be done is still a lot and the time available is short. For this we have decided to transform this plugin into an integrated solution developing a premium version of this plugin, in order to make possibile the impossible.</p>
 					</div>		
 					<div class="col-12 mt-1 mx-1 p-3 border bg-light justify-content-center">
-						<h3 class="p-3">Error Monitor</h3>
+						<h3 class="p-3">Activity Monitor</h3>
 						<div class="col-12 bg-dark overflow-auto error_monitor">
 							<p class="p-3 text-success" id="errors">
 								<?php

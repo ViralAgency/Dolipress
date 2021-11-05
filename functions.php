@@ -295,7 +295,7 @@ function dp_callAPI( $entry, $form, $fieldscount ){
 		$urlroot = 'http://localhost/';
 	}
 	
-	$url = $urlroot . $urladdress;
+	$url = $urlroot . $urladdress . '?DOLAPIKEY=' . $apikey;
 	
 	for ($y=0; $y<dp_count_Fields(); $y++){
 		$labels[]= get_option("dbfield$y");
@@ -319,39 +319,41 @@ function dp_callAPI( $entry, $form, $fieldscount ){
 
 	$data = json_encode($dati);
 	
-    $httpheader = ['DOLAPIKEY: '.$apikey];
-	$curl = curl_init();
-    $method =  "POST";
-    $httpheader[] = "Content-Type:application/json";
+    $httpheader = ['HTTP_DOLAPIKEY:'.$apikey];
+	$httpheader[] = "content-type:application/json charset=utf-8";
 	
-	curl_setopt( $curl, CURLOPT_POSTFIELDS, $data );
-    curl_setopt( $curl, CURLOPT_URL, $url);
-    curl_setopt( $curl, CURLOPT_HTTPHEADER, $httpheader );
-	curl_setopt( $curl, CURLOPT_RETURNTRANSFER, true );
-	curl_setopt( $curl, CURLOPT_SSL_VERIFYPEER, false);
-	curl_setopt( $curl, CURLOPT_SSL_VERIFYHOST,  2);
-
- 	$response = curl_exec( $curl );
-    curl_close( $curl );
+	$args = array(
+	    'method'      => 'POST',
+    	'timeout'     => 45,
+    	'redirection' => 5,
+    	'httpversion' => '1.0',
+    	'blocking'    => true,
+    	'headers'     => array(
+			'HTTP_DOLAPIKEY'	=> $apikey,
+			'content-type'		=> 'application/json'),
+    	'body'        => $data
+	);
+	$response = wp_remote_post( $url, $args );
 	
-	if (!is_numeric($response)){
-    	if ($response == ''){
-			$response = 'Error 404: Check URL address';
-		}
-		elseif ($response === false){
-			$response = curl_error($response);
-		}
-		
 	$dp_errors[]= get_option('dp_errors');
-	foreach ($dp_errors[0] as $value){
-		$errors[] = $value;
+	if (is_array($dp_errors)){
+      foreach ($dp_errors[0] as $value){
+          $errors[] = $value;
+      }
+	}	
+	if (is_array($response) && !is_wp_error($response)){
+    $log = date("Y-m-d H:i:s") .' '.$response['response']['code'].' '.$response['response']['message'];
 	}
-    $log = date("Y-m-d H:i:s") .' '.$response;		
-	$errors[] = $log;	
+	elseif(is_wp_error($response)){
+	$error = $response->get_error_code();
+	$error_msg = $response->get_error_message($error);
+	$log = date("Y-m-d H:i:s") .' '.'404'.' '.$error_msg;
+	}
+	$errors[] = $log;
 	update_option('dp_errors', $errors,'', 'yes');
 	unset($dp_errors);
 	unset($errors);
-	}
+	
 }
 
 //Retrieve and save last Telegram message
@@ -362,7 +364,7 @@ function dp_getTelegramMessages(){
 	$url = 'https://www.viral-agency.com/get_telegram_id.php?time=' . time();	
 	$response = wp_remote_get($url);
 	$msg_id = wp_remote_retrieve_body($response);
-	
+
 	if ($msg_id != ''){
 		add_option('telegramid', $msg_id,'','yes');
 		update_option('telegramid', $msg_id,'','yes');
@@ -374,7 +376,7 @@ function dp_getTelegramMessages(){
 function dp_retrieveMessage(){
 	
 	$msgid =  get_option('telegramid', '9' );
-	if ($msgid == 'null'){
+	if ($msgid == ''){
 		$msgid = 9;
 	}
 	echo '<script async src="https://telegram.org/js/telegram-widget.js?15" data-telegram-post="dolipress/'.$msgid.'" data-width="100%"></script>';
