@@ -23,17 +23,15 @@ GNU General Public License for more details.
 You should have received a copy of the GNU General Public License
 along with Dolipress. If not, see https://www.gnu.org/licenses/gpl-3.0.html.
 */
-
-	include( 'functions.php' );
 		
-	function dp_settingsPage() {
+	function dpgf_settingsPage() {
 	?>
 			<div class="row p-3">
 				<div class="col-10">
 					<h1 class="text-center">DoliPress Control Panel</h1>
 				</div>
 			</div>
-			<ul class="nav nav-tabs">
+			<ul class="nav nav-tabs col-11">
 			  	<li class="nav-item">
 					<a class="nav-link active" aria-current="Gravity Form" href="#">Gravity Form</a>
 			  	</li>
@@ -54,7 +52,7 @@ along with Dolipress. If not, see https://www.gnu.org/licenses/gpl-3.0.html.
 			<div class="row g-0">
 					<div class="col-6 me-1 p-3 border bg-light">
 						<div class="col-12 d-flex justify-content-center p-3">
-						<img src="../wp-content/plugins/DoliPress/img/Dolipress-Logo.png" class="img-fluid dplogo" alt="dolipress logo dobibarr wordpress">
+						<img src="<?php echo plugin_dir_url( __FILE__ );?>/img/Dolipress-Logo.png" class="img-fluid dplogo" alt="dolipress logo dobibarr wordpress">
 						</div>
 						<h3 class="p-3">What is that</h3>
 						<p class="px-3">Dolipress is a Wordpress plugin that connects the Wordpress platform to the CRM/ERP Open Souce Dolibarr to automate data acquisition between these two platforms. In this first version we have created an interface system between <b></b>Gravity Forms plugin</b> (the wordpress plugin dedicated to the creation of forms), but we want  to create a complete multi-component integration, with the development of interfaces dedicated to other plugins. Stay connected, because if you like working with these software, the future will be very interesting.</p>
@@ -65,8 +63,7 @@ along with Dolipress. If not, see https://www.gnu.org/licenses/gpl-3.0.html.
 						<h3 class="p-3">Latest News</h3>
 							<div class="col-11 justify-content-center">
 								<?php
-								dp_getTelegramMessages();
-								dp_retrieveMessage();
+								dpgf_getTelegramMessagesTemplate();
 								?>
 							</div>
 							<div class="text-center pt-2">
@@ -79,7 +76,7 @@ along with Dolipress. If not, see https://www.gnu.org/licenses/gpl-3.0.html.
 					<h3 class="p-3">Settings</h3>
 					<form action="options.php" method="post">
 						<?php	
-						dp_settingsfields();
+						dpgf_settingsfields();
 						?>
 						<div class="col-12 px-3">
 							<input name="submit" id="submit" class="btn btn-primary btn-md" type="submit" value="Save" />
@@ -103,9 +100,9 @@ along with Dolipress. If not, see https://www.gnu.org/licenses/gpl-3.0.html.
 						<div class="col-12 bg-dark overflow-auto error_monitor">
 							<p class="p-3 text-success" id="errors">
 								<?php
-								dp_print_errors();
+								dpgf_print_errors();
 								if($_SERVER['REQUEST_METHOD'] == "POST" and isset($_POST['dp_eraseLog'])){
-									dp_eraseLog();
+									dpgf_eraseLog();
 								}
 								?>
 							</p>
@@ -135,7 +132,7 @@ along with Dolipress. If not, see https://www.gnu.org/licenses/gpl-3.0.html.
 							<div id="icons" class="text-center p-2 justify-content-between">
 							<i class="fab fa-2x fa-bitcoin bitcoin"></i><i class="fab fa-2x fa-cc-paypal"></i>
 						</div>
-							<img id="qr" src="../wp-content/plugins/DoliPress/img/QR-bitcoin.png" class="img-fluid p-3 hide qr">
+							<img id="qr" src="<?php echo plugin_dir_url( __FILE__ );?>/img/QR-bitcoin.png" class="img-fluid p-3 hide qr">
 							<p id="text" class="text-start">The development of this plugin took a long time. To contribute to its maintenance, please donate.</p>
 						</div>
 						<div class="text-center">
