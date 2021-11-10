@@ -77,7 +77,7 @@ Dolipress connects the forms created with Gravity Forms to Dolibarr API in an ea
 
 # Changelog 
 
-### 1.0 Fist Stable Version
+### 1.0 First Stable Version
 *Adjustment to security specifications of the official Wordpress repository
 *Introduced HTTP API instead cURL
 *Improved Security
@@ -87,7 +87,7 @@ Dolipress connects the forms created with Gravity Forms to Dolibarr API in an ea
 
 [Paypal](https://www.paypal.com/donate/?hosted_button_id=GZ6Q8)
 
-*Bitcoin* bitcoinSegwit:bc1q7qxq5e6dkrsn4l6nl932zm7ajx63fm0pt3py2r
+Bitcoin bitcoinSegwit:bc1q7qxq5e6dkrsn4l6nl932zm7ajx63fm0pt3py2r
 
 
 # Licence
@@ -109,7 +109,7 @@ along with Dolipress. If not, see [GPL-3.0 License](https://www.gnu.org/licenses
 
 Copyright © 2021 Luca Scandroglio @ Viral Agency  
 
-## Licenze software dei componenti di terze parti
+## Third party license
 Core.js https://github.com/zloirock/core-js/blob/master/LICENSE
 
 Bootstrap https://github.com/twbs/bootstrap/blob/v4.0.0/LICENSE
