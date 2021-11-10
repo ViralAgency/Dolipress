@@ -85,9 +85,9 @@ Dolipress connects the forms created with Gravity Forms to Dolibarr API in an ea
 
 # Donations 
 
-###[Paypal](https://www.paypal.com/donate/?hosted_button_id=GZ6Q8)
+[Paypal](https://www.paypal.com/donate/?hosted_button_id=GZ6Q8)
 
-###[Bitcoin]bitcoinSegwit:bc1q7qxq5e6dkrsn4l6nl932zm7ajx63fm0pt3py2r
+*Bitcoin* bitcoinSegwit:bc1q7qxq5e6dkrsn4l6nl932zm7ajx63fm0pt3py2r
 
 
 # Licence
@@ -110,8 +110,7 @@ along with Dolipress. If not, see [GPL-3.0 License](https://www.gnu.org/licenses
 Copyright © 2021 Luca Scandroglio @ Viral Agency  
 
 ## Licenze software dei componenti di terze parti
+Core.js https://github.com/zloirock/core-js/blob/master/LICENSE
 
-###Core.js https://github.com/zloirock/core-js/blob/master/LICENSE
-
-###Bootstrap 5.0 https://github.com/twbs/bootstrap/blob/v4.0.0/LICENSE
+Bootstrap https://github.com/twbs/bootstrap/blob/v4.0.0/LICENSE
 
