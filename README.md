@@ -35,7 +35,7 @@ Dolipress connects the forms created with Gravity Forms to Dolibarr API in an ea
 * Error clearing function
 * Latest news retrieval function from the official telegram channel
 
-# Requirements
+# Requirements
 
 * Requires at least: 4.7 (Tested up to: 5.8.1)
 * Dolibarr v 14.00
