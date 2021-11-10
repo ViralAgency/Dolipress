@@ -1,6 +1,8 @@
-[![License](https://img.shields.io/badge/license-GPL%20V3.0-green)](https://www.gnu.org/licenses/gpl-3.0.html)
-[![GitHub issues](https://img.shields.io/github/issues/italia/bootstrap-italia.svg)](https://github.com/ViralAgency/Dolipress/issues)
-[![Join the Telegram channel](https://img.shields.io/badge/Slack%20channel-%23design-blue.svg)](https://t.me/dolipress)
+[![GitHub license](https://img.shields.io/github/license/ViralAgency/Dolipress)](https://github.com/ViralAgency/Dolipress/blob/main/LICENSE)
+![WordPress Plugin Required PHP Version](https://img.shields.io/wordpress/plugin/required-php/bbpress)
+[![GitHub issues](https://img.shields.io/github/issues/ViralAgency/Dolipress)](https://github.com/ViralAgency/Dolipress/issues)
+[![Join the Telegram channel](https://img.shields.io/badge/Telegram-dolipress-blue)](https://t.me/dolipress)
+
 
 
 # Project Status
@@ -69,7 +71,7 @@ Dolipress connects the forms created with Gravity Forms to Dolibarr API in an ea
 # Screenshots
 
 1. Dolipress Control Panel - 1
-![Dolipress Control Panel](/img/screenshot-1.png)
+![Dolipress Control Panel](/assets/screenshot-1.png)
 2. Dolipress Control Panel - settings
 ![Dolipress Control Panel](/assets/screenshot-2.png)
 
