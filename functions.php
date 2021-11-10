@@ -362,8 +362,6 @@ function dpfg_getTelegramMessageId(){
 	$response = wp_remote_get($url);
 	$msg_id = wp_remote_retrieve_body($response);
 	
-	echo $msg_id;
-	
 	if ($msg_id == ''){
 		$msg_id = get_option('telegramid', '9');
 		if ($msg_id == false){
@@ -401,7 +399,7 @@ function dpgf_print_errors(){
 	$dpgf_errors = get_option('dpgf_errors');
 	if ($dpgf_errors != ''){
       foreach ($dpgf_errors as $value){
-          echo $value . '<br>';
+          echo esc_attr($value) . '<br>';
       }
 	}
 	else {
