@@ -3,7 +3,9 @@
 [![Join the Telegram channel](https://img.shields.io/badge/Slack%20channel-%23design-blue.svg)](https://t.me/dolipress)
 
 
-# Annunci / Status del progetto
+# Project Status
+
+Pending approval in the official Wordpress repository
 
 # Dolipress 1.0
 
@@ -12,8 +14,8 @@
 ![Dolipress Logo](/img/Dolipress-Logo.png)
 
 # Index
-- [Description] (#description)
-- [Requirements] (#requirements)
+- [Description](#description)
+- [Requirements](#requirements)
 - [How to install](#how-to-install)
 - [F.A.Q](#FAQ)
 - [Screenshots](#screenshots)
@@ -67,7 +69,7 @@ Dolipress connects the forms created with Gravity Forms to Dolibarr API in an ea
 # Screenshots
 
 1. Dolipress Control Panel - 1
-![Dolipress Control Panel](/img/screenshot-2.png)
+![Dolipress Control Panel](/img/screenshot-1.png)
 2. Dolipress Control Panel - settings
 ![Dolipress Control Panel](/assets/screenshot-2.png)
 
@@ -83,7 +85,7 @@ Dolipress connects the forms created with Gravity Forms to Dolibarr API in an ea
 
 ###[Paypal](https://www.paypal.com/donate/?hosted_button_id=GZ6Q8)
 
-###[Bitcoin] bitcoinSegwit:bc1q7qxq5e6dkrsn4l6nl932zm7ajx63fm0pt3py2r
+###[Bitcoin]bitcoinSegwit:bc1q7qxq5e6dkrsn4l6nl932zm7ajx63fm0pt3py2r
 
 
 # Licence
