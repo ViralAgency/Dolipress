@@ -114,10 +114,10 @@ along with Dolipress. If not, see [GPL-3.0 License](https://www.gnu.org/licenses
 
 ## Autors & Copyright
 
-Copyright © 2021 Luca Scandroglio @viralagency  
+Copyright © 2021 Luca Scandroglio @ViralAgency  
 
 ## Third party license
 Core.js https://github.com/zloirock/core-js/blob/master/LICENSE
 
-Bootstrap https://github.com/twbs/bootstrap/blob/v4.0.0/LICENSE
+Bootstrap https://github.com/twbs/bootstrap/blob/v5.1.3/LICENSE
 
