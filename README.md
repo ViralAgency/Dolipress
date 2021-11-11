@@ -62,7 +62,7 @@ Dolipress connects the forms created with Gravity Forms to Dolibarr API in an ea
 
 ### What about the Checkboxes ?
 
->*The values contained in the checkboxes, due to the versatility of the values they can contain, cannot be uniquely attributed to a field present in Dolibarr. However, we are working on adding this functionality to the plugin.*
+>The values contained in the checkboxes, due to the versatility of the values they can contain, cannot be uniquely attributed to a field present in Dolibarr. However, we are working on adding this functionality to the plugin.
 
 ### Is Dolipress compatible with privacy laws?
 
@@ -116,7 +116,7 @@ along with Dolipress. If not, see [GPL-3.0 License](https://www.gnu.org/licenses
 
 Copyright © 2021 Luca Scandroglio @ViralAgency  
 
-## Third party license
+## Third party licenses
 Core.js https://github.com/zloirock/core-js/blob/master/LICENSE
 
 Bootstrap https://github.com/twbs/bootstrap/blob/v5.1.3/LICENSE
