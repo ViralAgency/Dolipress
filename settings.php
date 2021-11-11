@@ -1,14 +1,4 @@
 <?php
-/**
-* Plugin Name: DoliPress
-* Version: 1.0
-* Description: Synchronize gravity form with dolibarr third parties.
-* Author: Luca Scandroglio
-* Author URI: https://www.lucascandroglio.it
-* License: GPL v3
-* Licence URI: https://www.gnu.org/licenses/gpl-3.0.html
-*/
-
 /*
 DoliPress is free software: you can redistribute it and/or modify
 it under the terms of the GNU General Public License as published by
