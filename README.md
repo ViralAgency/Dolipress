@@ -7,7 +7,7 @@
 
 # Project Status
 
-Published on the official ![Wordpress repository](https://wordpress.org/plugins/dolipress/)
+Published on the official [Wordpress repository](https://wordpress.org/plugins/dolipress/)
 
 # Dolipress 1.0
 
