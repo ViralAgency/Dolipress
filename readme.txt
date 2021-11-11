@@ -49,8 +49,9 @@ Dolipress connects the forms created with Gravity Forms to Dolibarr API in an ea
 
 == Screenshots ==
 
-1. Dolipress Control Panel - 1
+1. Dolipress Control Panel 
 2. Dolipress Control Panel - settings
+3. Doligravity Control Panel - settings
 
 == Changelog ==
 
