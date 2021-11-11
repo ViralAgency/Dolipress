@@ -97,7 +97,7 @@ Dolipress connects the forms created with Gravity Forms to Dolibarr API in an ea
 Bitcoin bitcoinSegwit:bc1q7qxq5e6dkrsn4l6nl932zm7ajx63fm0pt3py2r
 
 
-# Licence
+# License
 
 DoliPress is free software: you can redistribute it and/or modify
 it under the terms of the GNU General Public License as published by
@@ -114,7 +114,7 @@ along with Dolipress. If not, see [GPL-3.0 License](https://www.gnu.org/licenses
 
 ## Autors & Copyright
 
-Copyright © 2021 Luca Scandroglio @ Viral Agency  
+Copyright © 2021 Luca Scandroglio @viralagency  
 
 ## Third party license
 Core.js https://github.com/zloirock/core-js/blob/master/LICENSE
