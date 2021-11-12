@@ -32,21 +32,36 @@ function dpgf_register_styles(){
 	wp_register_style('bootstrap_admin_theme_css', plugin_dir_url( __FILE__ ) . '/css/bootstrap.css');
 	wp_register_style('bootstrap_admin_theme', plugin_dir_url( __FILE__ ) . '/js/bootstrap.js');
 	wp_register_style('fontawesome_js_css', 'https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@5.15.4/css/all.css');
-	wp_register_style('doligravity_style_css', plugin_dir_url( __FILE__ ) . '/css/style.css');
 	
 	wp_enqueue_style('bootstrap_admin_theme_css', plugin_dir_url( __FILE__ ) . '/css/bootstrap.css');
 	wp_enqueue_style('fontawesome_js_css', 'https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@5.15.4/css/all.css');
-	wp_enqueue_style('doligravity_style_css', plugin_dir_url( __FILE__ ) . '/css/style.css');
 	wp_enqueue_script('bootstrap_admin_theme', plugin_dir_url( __FILE__ ) . '/js/bootstrap.js');
-	wp_enqueue_script('core', plugin_dir_url( __FILE__ ) . '/js/core.js');
-	wp_enqueue_script('js', plugin_dir_url( __FILE__ ) . '/js/javascript.js');
+	
+	$current_page = get_current_screen()->base;
+    	if($current_page == 'toplevel_page_doligravity-settings') {
+			
+		wp_enqueue_script('dpfg_core_js', plugin_dir_url( __FILE__ ) . 'js/core.js');
+        wp_enqueue_script('dpfg_javascript', plugin_dir_url( __FILE__ ) . 'js/javascript.js');
+
+
+        wp_enqueue_style( 'dpfg_style_css', plugin_dir_url( __FILE__ ) . 'css/style.css');
+    } 
+	else { 
+
+        wp_dequeue_script('dpfg_javascript');
+		wp_dequeue_script('dpfg_core_js');
+        wp_dequeue_style('dpfg_style_css');
+	}
 }
 
 //Create WP Menu Item
 
 function dpgf_createMenu() {
 	$icon = 'data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0idXRmLTgiPz4KPCEtLSBHZW5lcmF0b3I6IEFkb2JlIElsbHVzdHJhdG9yIDIzLjEuMSwgU1ZHIEV4cG9ydCBQbHVnLUluIC4gU1ZHIFZlcnNpb246IDYuMDAgQnVpbGQgMCkgIC0tPgo8c3ZnIHZlcnNpb249IjEuMSIgaWQ9IkxpdmVsbG9fMSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIiB4bWxuczp4bGluaz0iaHR0cDovL3d3dy53My5vcmcvMTk5OS94bGluayIgeD0iMHB4IiB5PSIwcHgiCgkgdmlld0JveD0iMCAwIDIwMCAyMDAiIHN0eWxlPSJlbmFibGUtYmFja2dyb3VuZDpuZXcgMCAwIDIwMCAyMDA7IiB4bWw6c3BhY2U9InByZXNlcnZlIj4KPHN0eWxlIHR5cGU9InRleHQvY3NzIj4KCS5zdDB7ZmlsbDojOUJBRUI0O30KCS5zdDF7ZmlsbDojNjY2NjY2O30KCS5zdDJ7ZmlsbDojOTBBN0FDO30KPC9zdHlsZT4KPGc+Cgk8cGF0aCBjbGFzcz0ic3QwIiBkPSJNMTQyLjEsMTM2Ljg1Yy0wLjI1LDAuNDItMC40MSwwLjMtMC41My0wLjA5QzE0MS43NSwxMzYuNzYsMTQxLjkzLDEzNi43OSwxNDIuMSwxMzYuODUiLz4KCTxwYXRoIGNsYXNzPSJzdDEiIGQ9Ik0xMjkuMTksMzYuMjljMC0wLjAzLDAuMDEtMC4wNiwwLjAyLTAuMDljMS42Ny01Ljc1LDIuMTQtNi4xLDguMTMtNi4xMWM1LjQ3LTAuMDEsMTAuOTMtMC4wMiwxNi40LDAuMDEKCQljMC45OSwwLjAxLDIuMzgtMC40MSwyLjI1LDEuNDVjLTAuMTEsMS41Mi0wLjUyLDIuNTYtMi40MywyLjUyYy0zLjczLTAuMDktNy40NywwLjAxLTExLjIsMC4wNGMtMi0wLjAyLTQuMDEtMC4wOS02LjAxLTAuMDYKCQljLTEuMiwwLjAyLTIuMjcsMC40OC0yLjE5LDEuODhjMC4wOCwxLjQ4LDIuNjQsMS4wNiwzLjQsMS4wN2M0LjU1LDAuMDYsNy44NC0wLjIsMTIuNC0wLjEzYzEuMDEsMC4wMSwyLjY0LTAuNjQsMi41LDEuNDQKCQljLTAuMSwxLjQ0LTAuNDMsMi41LTIuMzgsMi41NGMtNC42NSwwLjEtOS4yOSwwLjI5LTEzLjkyLTAuMDdjLTIuMDYtMC4xNi0zLjIsMC4yMy0zLjM2LDIuNjNjLTAuMSwxLjYxLDAuMDksMy44OS0yLjgyLDMuNzEKCQljLTEuNTgtMC4xLTIuMzUtMC4zNS0xLjk4LTIuMjNDMTI4LjU0LDQyLjA1LDEyOC44MSwzOS4xNiwxMjkuMTksMzYuMjkiLz4KCTxwYXRoIGNsYXNzPSJzdDIiIGQ9Ik0xNDUuMzksMTI5LjgydjAuODdjLTAuMTgtMC4xLTAuNDgtMC4xNy0wLjUyLTAuMzFDMTQ0Ljc3LDEzMC4wMSwxNDUuMDIsMTI5LjgzLDE0NS4zOSwxMjkuODIiLz4KCTxwb2x5bGluZSBjbGFzcz0ic3QwIiBwb2ludHM9IjEwMS41NSw1OSAxMDEuNTUsNTkgMTAyLjU1LDU5IAkiLz4KCTxwYXRoIGNsYXNzPSJzdDEiIGQ9Ik0xNzUuNjgsNzQuNzRjMC4wNS02Ljg3LTEuOTUtMTIuOTgtNi4xMS0xOC4yN2MtMi4xNy0yLjc1LTMuNTUtNS4wMS0yLjk0LTguOTYKCQljMC44NC01LjQzLDAuMjctMTEuMDksMC4xOS0xNi42NWMtMC4wNS00LjA1LTEuODYtNy4xNS01LjQxLTkuMTljLTQuNjUtMi42Ny05LjMyLTUuMzQtMTMuOTctOC4wMwoJCWMtMy43Mi0yLjE1LTcuNDEtMi4xNC0xMS4xMywwLjAyYy00LjA5LDIuMzgtNy41Myw1LjIyLTExLjc2LDcuMzRjLTIsMS00LjAzLDMuMy02LjExLDMuMDJjLTIuMTctMC4zLTQuMTEtMi4xOS02LjIxLTMuMjkKCQljLTkuMzctNC45Ni0xOC45OS01LjI4LTI4LjIzLTAuMTVjLTE2Ljc5LDkuMzMtMzMuNDQsMTguOS00OS45MywyOC43NWMtOC45OSw1LjM3LTEzLjYxLDEzLjc5LTEzLjgyLDI0LjMKCQljLTAuMiw5LjM5LTAuMDQsMTguNzgtMC4wNCwyOC4xOGMwLDkuMzktMC4xNiwxOC43OCwwLjAzLDI4LjE3YzAuMjIsMTAuOCw0LjksMTkuNCwxNC4yMywyNC45MgoJCWMxNi4xMyw5LjU0LDMyLjQyLDE4LjgzLDQ4Ljc1LDI4LjA1YzkuNyw1LjQ3LDE5LjcsNS40NywyOS40LDBjMTYuMzMtOS4yMSwzMi42MS0xOC41MSw0OC43NS0yOC4wNQoJCWM5LjMyLTUuNTEsMTQuMTEtMTQuMTEsMTQuMjItMjQuOTJDMTc1Ljc3LDExMS41NywxNzUuNTYsOTMuMTUsMTc1LjY4LDc0Ljc0eiBNMTQyLjMyLDEwOC43NGMtMS4xLDE0LjIxLTYuOCwyNi4wOC0xOC41NSwzNC42MQoJCWMtNy4zNiw1LjM1LTE1LjcyLDcuNDQtMjQuNjQsNy40NGMtMC43LDAtMS40LTAuMDEtMi4xLTAuMDRjLTUuNDUtMC4yLTUuNDUtMC4xNC01LjQ2LTUuNDljLTAuMDEtNi4zMiwwLjA4LTEyLjY0LTAuMDctMTguOTUKCQljLTAuMDUtMi4xLDAuMzQtMi45NywyLjQ2LTIuOTdjMC4xMywwLDAuMjcsMCwwLjQxLDAuMDFjMC45MiwwLjA0LDEuODMsMC4wNywyLjc0LDAuMDdjMi42MiwwLDUuMjMtMC4yNCw3Ljg2LTEuMTQKCQljNy44Mi0yLjY5LDExLjQtOC4yNiwxMi4wNy0xNi4wOGMwLjI1LTIuOTEsMC4yNS01Ljg2LTAuNTMtOC43M2MtMi4xLTcuNzktNy40MS0xMS45OC0xNi40Ny0xMi43MWMtMS43Ni0wLjE0LTMuNTMtMC4xNy01LjMtMC4xNwoJCWMtMC45OSwwLTEuOTgsMC4wMS0yLjk2LDAuMDFjLTAuOTUsMC0xLjkxLTAuMDEtMi44Ni0wLjA0Yy0wLjA0LDAtMC4wOCwwLTAuMTIsMGMtMS43OCwwLTEuMjMsMS4zMS0xLjIzLDIuMjIKCQljLTAuMDQsMTYuNzItMC4wNSwzMy40NC0wLjA3LDUwLjE1YzAsMy44NS0wLjA3LDcuNzEsMC4wMywxMS41NmMwLjAzLDEuNDItMC40MywxLjgxLTEuNzcsMS44MWgtMC4wOAoJCWMtNC4xNi0wLjA0LTguMzItMC4wOC0xMi40Ny0wLjA4Yy0yLjgsMC01LjYsMC4wMS04LjQsMC4wNWgtMC4wOGMtMS42MiwwLTEuOTUtMC41OS0xLjk0LTIuMTFjMC4wNS0xNC43MiwwLjAzLTI5LjQzLDAuMDMtNDQuMTUKCQloLTAuMDdjMC0xNC41NiwwLjAzLTI5LjEyLTAuMDQtNDMuNjhjLTAuMDEtMS42OSwwLjI5LTIuMzUsMi4xNC0yLjM1aDAuMDljMTEuNDQsMC4xMywyMi44OSwwLjAxLDM0LjMzLDAuMTgKCQljNi42MiwwLjEsMTMuMDQsMS40NywxOS4xMSw0LjJjNi45MSwzLjExLDEyLjIyLDguMDEsMTYuNTQsMTQuMjRDMTQxLjcsODYuNCwxNDMuMjEsOTcuMjksMTQyLjMyLDEwOC43NHogTTE2NC4xNSwzOS4yNAoJCWMwLDIuNjQtMC4wNCw1LjI4LDAuMDEsNy45MmMwLjA2LDMuMjQtMS40LDUuNTctNC4xMyw3LjE2Yy00LjU2LDIuNjYtOS4xMiw1LjMtMTMuNyw3LjkyYy0yLjgsMS41OS01LjY0LDEuODUtOC41NCwwLjE2CgkJYy00Ljc5LTIuOC05LjY1LTUuNDktMTQuNC04LjM1Yy0yLjQtMS40NS0zLjY4LTMuNjUtMy42NS02LjU5YzAuMDYtNS42NCwwLjA1LTExLjI5LDAuMDEtMTYuOTNjLTAuMDItMi44MywxLjIxLTQuOTUsMy41NS02LjMzCgkJYzUuMDItMi45NiwxMC4wOC01LjgzLDE1LjE4LTguNjRjMi4xOS0xLjIxLDQuNjEtMS4yNiw2LjgxLTAuMDVjNS4xNywyLjg2LDEwLjMyLDUuNzcsMTUuMzcsOC44NGMyLjI4LDEuMzksMy41MiwzLjYyLDMuNSw2LjQyCgkJQzE2NC4xMywzMy41OSwxNjQuMTUsMzYuNDEsMTY0LjE1LDM5LjI0eiIvPgo8L2c+Cjwvc3ZnPgo=';
-	add_menu_page( 'DoliPress', 'DoliPress', 'manage_options', 'doligravity-settings', 'dpgf_settingsPage', $icon  );
+	
+	$page = add_menu_page( 'DoliPress', 'DoliPress', 'manage_options', 'doligravity-settings', 'dpgf_settingsPage', $icon  );
+	
+	
 	}
 
 //Function to generate the settings field
@@ -217,7 +232,7 @@ function dpfg_basic_settings(){
 	$gffields = $form['fields'];
 	if ($gffields != 'null') {
 		$fieldscount = dpfg_count_Fields();
-		echo '<h3 class="p-3">Select Pairs</h3><br><table><tbody><tr><th>Gravity Form Field</th><th>Dolibarr Field</th></tr>';
+		echo '<h3 class="p-3">Select Pairs</h3><br><table id="select"><tbody><tr><th>Gravity Form Field</th><th>Dolibarr Field</th></tr>';
 		
 			for ($y=0; $y<$fieldscount; $y++) {
 				$gf_value = get_option('gffield'.$y);
