@@ -115,7 +115,7 @@ along with Dolipress. If not, see [GPL-3.0 License](https://www.gnu.org/licenses
 
 ## Autors & Copyright
 
-Copyright © 2021 Luca Scandroglio @ViralAgency  
+Copyright © 2021 Luca Scandroglio @[ViralAgency](https://www.viral-agency.com) 
 
 ## Third party licenses
 [Core.js](https://github.com/zloirock/core-js/blob/master/LICENSE)
