@@ -85,10 +85,11 @@ Dolipress connects the forms created with Gravity Forms to Dolibarr API in an ea
 # Changelog 
 
 ### 1.0 First Stable Version
-*Adjustment to security specifications of the official Wordpress repository
-*Introduced HTTP API instead cURL
-*Improved Security
-*Improved logs reporting & activity monitor 
+
+* Adjustment to security specifications of the official Wordpress repository
+* Introduced HTTP API instead cURL
+* Improved Security
+* Improved logs reporting & activity monitor 
 
 # Donations 
 
