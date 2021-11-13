@@ -115,10 +115,10 @@ along with Dolipress. If not, see [GPL-3.0 License](https://www.gnu.org/licenses
 
 ## Autors & Copyright
 
-Copyright © 2021 Luca Scandroglio @ViralAgency  
+Copyright © 2021 Luca Scandroglio @[ViralAgency](https://www.viral-agency.com) 
 
 ## Third party licenses
-Core.js https://github.com/zloirock/core-js/blob/master/LICENSE
+[Core.js](https://github.com/zloirock/core-js/blob/master/LICENSE)
 
-Bootstrap https://github.com/twbs/bootstrap/blob/v5.1.3/LICENSE
+[Bootstrap v.5.1.3](https://github.com/twbs/bootstrap/blob/v5.1.3/LICENSE)
 
